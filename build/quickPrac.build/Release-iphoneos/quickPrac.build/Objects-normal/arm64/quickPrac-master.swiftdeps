@@ -1,0 +1,7 @@
+version: "Apple Swift version 4.1.2 (swiftlang-902.0.54 clang-902.0.39.2)"
+options: "018c0f1efb910a26a5a8fe5af6f7d10c"
+build_time: [1537682557, 375556000]
+inputs:
+  "/Users/xxia/iOS/quickPrac/quickPrac/ViewController.swift": [9223372036, 854775807]
+  "/Users/xxia/iOS/quickPrac/quickPrac/AppDelegate.swift": [9223372036, 854775807]
+  "/Users/xxia/iOS/quickPrac/quickPrac/banana.swift": [9223372036, 854775807]
