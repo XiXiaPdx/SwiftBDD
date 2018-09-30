@@ -28,15 +28,15 @@ class quickPracTests: QuickSpec {
                     let countOfVowels = view.numberOfVowelsInString(string: vowelString)
                     expect(countOfVowels).to(equal(10))
                 }
-//                it("skips even ints in range"){
-//                    let topOfRange = 10
-//                    let oddIntArray = view.skipEvenInLoop(throughRange: topOfRange)
-//                    expect(view.anyEven(oddIntArray)).to(equal(false))
-//                }
+                it("skips even ints in range"){
+                    let topOfRange = 10
+                    let oddIntArray = view.skipEvenInLoop(throughRange: topOfRange)
+                    expect(view.anyEven(numberArray:oddIntArray)).to(equal(false))
+                }
             }
         }
         describe("Helper Functions"){
-            context("math checks"){
+            context("Any Even"){
                 beforeEach{
                     view = ViewController()
                 }
