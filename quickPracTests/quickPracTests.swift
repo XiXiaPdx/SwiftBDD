@@ -14,27 +14,47 @@ import Quick
 @testable import quickPrac
 
 class quickPracTests: QuickSpec {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
 
     override func spec() {
-        it("counts vowels"){
-            let vowelString = "AEIOUaeiou"
-            let view = ViewController ()
-            let countOfVowels = view.numberOfVowelsInString(string: vowelString)
-            expect(countOfVowels).to(equal(10))
+        var view: ViewController!
+        
+        describe("Practicing tests"){
+            context("on for loops"){
+                beforeEach{
+                    view = ViewController ()
+                }
+                it("counts vowels"){
+                    let vowelString = "AEIOUaeiou"
+                    let countOfVowels = view.numberOfVowelsInString(string: vowelString)
+                    expect(countOfVowels).to(equal(10))
+                }
+//                it("skips even ints in range"){
+//                    let topOfRange = 10
+//                    let oddIntArray = view.skipEvenInLoop(throughRange: topOfRange)
+//                    expect(view.anyEven(oddIntArray)).to(equal(false))
+//                }
+            }
         }
-                
+        describe("Helper Functions"){
+            context("math checks"){
+                beforeEach{
+                    view = ViewController()
+                }
+                it("checks for Even in all odd array"){
+                    let allOddArray = [1,3,5,7]
+                    expect(view.anyEven(numberArray: allOddArray)).to(equal(false))
+                }
+                it("checks for Even in mixed array"){
+                    let allOddArray = [2,6,5,7]
+                    expect(view.anyEven(numberArray: allOddArray)).to(equal(true))
+                }
+                it("checks for Even in array with zero and odds"){
+                    let allOddArray = [0,3,5,7]
+                    expect(view.anyEven(numberArray: allOddArray)).to(equal(true))
+                }
+            }
+        }
     }
-    
 }
 
 

@@ -26,6 +26,19 @@ class ViewController: UIViewController {
         return string.reduce(0) { $0 + (vowels.contains($1) ? 1
             : 0) }
     }
+    
+    func skipEvenInLoop (throughRange: Int) -> [Int] {
+        var oddIntArray: [Int] = []
+        for number in 1...throughRange where number % 2 != 0 {
+            oddIntArray.append(number)
+        }
+        return oddIntArray
+    }
+    
+    func anyEven(numberArray:[Int]) -> Bool {
+        let filteredArray = numberArray.filter {return $0 % 2 == 0}
+        return filteredArray.count > 0 ? true:false
+    }
 
 }
 

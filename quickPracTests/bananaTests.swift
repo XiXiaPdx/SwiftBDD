@@ -14,9 +14,13 @@ import Quick
 
 class bananaTests: QuickSpec {
     override func spec() {
-        it("is a banana"){
-            let banana = Banana()
-            expect(banana is Banana).to(beTrue())
+        describe("I made something "){
+            context ("and this time "){
+                it("is a banana"){
+                let banana = Banana()
+                expect(banana is Banana).to(beTrue())
+                }
+            }
         }
     }
 }
