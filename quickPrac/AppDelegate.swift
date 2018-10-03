@@ -16,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let token = Bundle.main.infoDictionary!["theToken"] as! String
+        print("TOKEN IS \(token)")
+        let view = ViewController ()
+        view.networkCall()
+        
         return true
     }
 

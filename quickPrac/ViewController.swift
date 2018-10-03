@@ -39,6 +39,33 @@ class ViewController: UIViewController {
         let filteredArray = numberArray.filter {return $0 % 2 == 0}
         return filteredArray.count > 0 ? true:false
     }
-
+    
+    func fakeAsyncWaitSeconds(sleepTime: UInt32) -> Bool {
+        var condition: Bool = true
+        let pause = {
+        Thread.sleep(forTimeInterval: TimeInterval(sleepTime))
+            condition = false
+        }
+        pause ()
+        return condition
+    }
+    
+    func networkCall () {
+        // get URL shared session singleton for most basic network requests
+        let sharedSession = URLSession.shared
+        
+        //this is similar guard, to check for null, using optional ability of swift
+        if let url = URL(string: "https://goo.gl/wV9G4I"){
+            let request = URLRequest(url: url)
+            let dataTask = sharedSession.dataTask(with: url, completionHandler: {(data, response, error)-> Void in
+                
+                if let data = data {
+                    DispatchQueue.main.async {
+                        print(response)
+                    }
+                }
+            })
+            dataTask.resume()
+        }
+    }
 }
-

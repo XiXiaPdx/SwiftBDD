@@ -1,0 +1,9 @@
+//
+//  standardConfig.xcconfig
+//  quickPrac
+//
+//  Created by Xi Xia on 10/1/18.
+//  Copyright © 2018 Xi Xia. All rights reserved.
+//
+
+theToken = "ABC"

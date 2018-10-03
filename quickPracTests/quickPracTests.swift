@@ -6,7 +6,6 @@
 //  Copyright © 2018 Xi Xia. All rights reserved.
 //
 
-import XCTest
 import Nimble
 import Quick
 
@@ -52,6 +51,17 @@ class quickPracTests: QuickSpec {
                     let allOddArray = [0,3,5,7]
                     expect(view.anyEven(numberArray: allOddArray)).to(equal(true))
                 }
+            }
+        }
+        describe("Async"){
+            context(""){
+                beforeEach{
+                    view = ViewController()
+                }
+                it("true only after 2 second delay"){                    
+                    expect(view.fakeAsyncWaitSeconds(sleepTime: 2)).toNot(equal(true))
+                }
+             
             }
         }
     }
